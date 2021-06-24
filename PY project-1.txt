@@ -1,0 +1,252 @@
+                                                                  **PYTHON   PROJECT**
+
+ 
+                                             Rock Paper Scissors Game Using Python Tkinter
+
+
+#  Introduction :
+                          Let’s create a Rock Paper Scissors game (Stone Paper Scissors game) using the Tkinter library of Python.
+              I guess we all know about this game . This game is very easy and popular and often played by the children using
+              their hands .
+                         Basically this is very easy game . In case you don't know what is this game here i go....
+              Rock Paper Scisssor is the game with three choices (Rock, Paper, Scissors ) . Two players can play this at a time .
+              Each one has to choose from the three options available .
+
+ #  About Game  [RULES]  :
+                     In this game actually you are playing with your enemy , which is computer here .
+              The rules for playing this game are listed here .
+     
+               * If one player chooses the rock , and other chooses the scissors , then rock can break the scissors 
+                  hence rocks win  .
+               * If one player chooses the rock and other people chooses paper , then paper will wrap rock 
+                  hence paper wins  .
+               * If one player chooses the scissors and other people chooses then ,  paper  then scissor can cut (tore) 
+                  the paper hence scissor wins .
+              * If in case both select same choises , then no one will win . Both users (computer ) will not gate any  point  .
+  
+
+            So basically this is our game and it's rules ......
+
+================================================================================================
+
+                                                                    *** CODE ***
+                                                        [  This code is without GUI ]
+
+import random
+user_action = input("Enter a choice (rock, paper, scissors): ")
+possible_actions = ["rock", "paper", "scissors"]
+computer_action = random.choice(possible_actions)
+print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+if user_action == computer_action:
+    print(f"Both players selected {user_action}. It's a tie!")
+    elif user_action == "rock":
+        if computer_action == "scissors":
+                print("Rock smashes scissors! You win!")
+                    else:
+                            print("Paper covers rock! You lose.")
+                            elif user_action == "paper":
+                                if computer_action == "rock":
+                                        print("Paper covers rockscissors":
+                print("Rock smashes scissors! You win!")
+                    else:
+                            print("Paper covers rock! You lose.")
+                            elif user_action == "paper":
+                                if computer_action == "rock":
+                                        print("Paper covers rockscissors":
+                print("Rock smashes scissors! You win!")
+                    else:
+                            print("Paper covers rock! You lose.")
+                            elif user_action == "paper":
+                                if computer_action == "rock":
+                                        print("Paper covers rockscissors":
+                print("Rock smashes scissors! You win!")
+                    else:
+                            print("Paper covers rock! You lose.")
+                            elif user_action == "paper":
+                                if computer_action == "rock":
+                                        print("Paper covers rock! You win!")
+                                                                    else:
+                                                                            print("Rock smashes scissors! You lose.")
+                                                                            import random
+user_action = input("Enter a choice (rock, paper, scissors): ")
+possible_actions = ["rock", "paper", "scissors"]computer_action = random.choice(possible_actions)
+print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+
+if user_action == computer_action:
+    print(f"Both players selected {user_action}. It's a tie!")
+    elif user_action == "rock":
+        if computer_action == "scissors":
+                print("Rock smashes scissors! You win!")
+                    else:print("Paper covers rock! You lose.")
+                            elif user_action == "paper":
+                                if computer_action == "rock":
+                                        print("Paper covers rock! You win!")
+                                            else:
+                                                    print("Scissors cuts paper! You lose.")
+                                                    elif user_action == "scissors":
+                                                        if computer_action == "paper":
+                                                                print("Scissors cuts paper! You win!")
+                                                                    else:
+                                                                            print("Rock smashes scissors! You lose.")
+                                                                            import random
+while True:
+    user_action = input("Enter a choice (rock, paper, scissors): ")
+        possible_actions = ["rock", "paper", "scissors"]
+            computer_action = random.choice(possible_actions)
+                print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+    if user_action == computer_action:
+            print(f"Both players selected {user_action}. It's a tie!")
+                elif user_action == "rock":
+                        if computer_action == "scissors":
+                                    print("Rock smashes scissors! You win!")
+                                            else:
+                                                        print("Paper covers rock! You lose.")
+                                                            elif user_action == "paper":
+                                                                    if computer_action == "rock":
+                                                                                print("Paper covers rock! You win!")
+                                                                                        else:
+                                                                                                    print("Scissors cuts paper! You lose.")
+                                                                                                        elif user_action == "scissors":
+                                                                                                                if computer_action == "paper":
+                                                                                                                            print("Scissors cuts paper! You win!")
+                                                                                                                                    else:
+                                                                                                                                                print("Rock smashes scissors! You lose.")
+    play_again = input("Play again? (y/n): ")
+        if play_again.lower() != "y":
+                break
+                
+
+=================================================================================================================
+ 
+Code Explaination  : 
+                 Take input from user : 
+                 The goal here is to ask the user what they would like to choose as an action and then assign that choice to a variable:
+    
+                 Make Computer choice : 
+                 A competitive game of rock paper scissors involves strategy. Rather than trying to develop a model for that, though,
+                 you can save yourself  some time by having the computer select a random action. Random selections are a great way 
+                 to have the computer choose a pseudorandom value .
+
+                 Determine a Winner
+                 Now that both players have made their choice, you just need a way to decide who wins. Using an if … elif … else 
+                block, you can compare players’ choices and determine a winner:
+
+                 By comparing the tie condition first, you get rid of quite a few cases. If you didn’t do that, then you’d need to check 
+               each possible action for user_action and compare it against each possible action for computer_action. By checking the tie 
+                condition first, you’re able to know what the computer chose with only two conditiona checks of computer action .
+
+                 So this is how  we created this ... And this is code explanation (Without adding GUI in the code )
+
+ =======================================================================================================================
+                    
+                                                     ****CODE****
+                                    [Code with adding gui using tkinter ]
+
+import random
+import tkinter as tk 
+window = tk.Tk()
+window.geometry("400x300")
+window.title("Rock Paper Scissors Game") 
+USER_SCORE = 0
+COMP_SCORE = 0
+USER_CHOICE = ""
+COMP_CHOICE = "" 
+def choice_to_number(choice):
+    rps = {'rock':0,'paper':1,'scissor':2}
+    return rps[choice]
+def number_to_choice(number):
+    rps={0:'rock',1:'paper',2:'scissor'}
+    return rps[number]
+def random_computer_choice():
+    return random.choice(['rock','paper','scissor']) 
+def result(human_choce,comp_choice):
+    global USER_SCORE
+    global COMP_SCORE
+    user=choice_to_number(human_choice)
+    comp=choice_to_number(comp_choice)
+    if(user==comp):
+        print("Tie")
+    elif((user-comp)%3==1):
+        print("You win")
+        USER_SCORE+=1
+    else:
+        print("Comp wins")
+        COMP_SCORE+=1
+    text_area = tk.Text(master=window,height=12,width=30,bg="#FFFF99")
+    text_area.grid(column=0,row=4)
+    answer = "Your Choice: {uc} \nComputer's Choice : {cc} \n Your Score : {u} \n Computer Score : {c} ".format(uc=USER_CHOICE,cc=COMP_CHOICE,u=USER_SCORE,c=COMP_SCORE)    
+    text_area.insert(tk.END,answer)
+def rock():
+    global USER_CHOICE
+    global COMP_CHOICE
+    USER_CHOICE='rock'
+    COMP_CHOICE=random_computer_choice()
+    result(USER_CHOICE,COMP_CHOICE)
+def paper():
+    global USER_CHOICE
+    global COMP_CHOICE
+    USER_CHOICE='paper'
+    COMP_CHOICE=random_computer_choice()
+    result(USER_CHOICE,COMP_CHOICE)
+def scissor():
+    global USER_CHOICE
+    global COMP_CHOICE
+    USER_CHOICE='scissor'
+    COMP_CHOICE=random_computer_choice() 
+    result(USER_CHOICE,COMP_CHOICE)
+button1 = tk.Button(text="       Rock       ",bg="skyblue",command=rock)
+button1.grid(column=0,row=1)
+button2 = tk.Button(text="       Paper      ",bg="pink",command=paper)
+button2.grid(column=0,row=2)
+button3 = tk.Button(text="      Scissor     ",bg="lightgreen",command=scissor)
+button3.grid(column=0,row=3)
+window.mainloop()
+
+===========================================================================================
+
+Code Explanation using [GUI]
+
+              First of all, we need to import two libraries into our code, which are tkinter and random.
+ Create window for our game name as rock , paper ,scissors .
+             Next, we are going to define the global variables that we are going to use in our program. 
+ We have four of them for storing the user’s score, computer’s score, user’s choice, and computer’s choice.
+             Initially, we set the computer’s score and the user's score into zero . 
+Then, we are going to define two methods for converting the user’s choice to a number and vice versa. 
+Now, let’s create a function to get the computer’s choice. We use the random library here.
+The computer selects a random choice from either rock , paper or scissors .
+           Next, we are going to create the most important function in our code, the result function, that determines the winner.
+ This function evaluates both user’s and computer’s choices, and based on the comparisons, it picks a winner and updates the scores.
+           Then, we are going to define three methods for three different user choices. These methods take the user’s choice, generate a computer’s random choice,
+ and passthem into the result function, which we created previously.Also, let’s create a text area for displaying the current choices and current scores of both the 
+user and the computer.
+Now, let’s build three buttons so that the user can click them to play the game.
+Finally RUN inside window of mainloop. 
+
+This is the explanation containing  gui ......
+
+=============================================================================================================================================
+ OUTPUT of this both code are added  in separate with an extra attatchement  : 
+-------------------------------------------------------------------------------------------------------------------------------
+CONCLUSION 
+                         From this mini project we came to know about different methods and functions in python.
+                         We also learnt about use of tkinter in python we also applied it in our program .
+                         We also come to know about different concepts in python . we applied all in our program .
+
+Summary : 
+                 Hence from this mini project (Game [rock , paper , scissors ]) .
+                 we learnt how to use tkinter in python program then we also learnt different concepts in python .
+                 It was really good experience to do the mini project . In such way i concluded here .
+
+ Guided by :
+                          Mrs . Dahiwal Sir 
+ 
+ Group members (participant)
+                                  1] Kulkarni  Sakshi  Nishikant  .
+                                       Branch : IT
+                                       En.no : 197031
+
+                                 2] Joshi  Sapna  Santoshrao   .
+                                      Branch : IT 
+                                      En.no : 197023  .
+
+==================================***********************=============================================          
